@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="icon" href="https://ibank.midlandscorp.com/images/logo.png" type="image/png">
+
+    <title>Midlands Corporation</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="assets/all.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/google-fonts.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="assets/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="assets/jquery.min.js"></script>
+    <script src="assets/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="assets/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="assets/sb-admin-2.min.js"></script>
+    <script src="assets/script.js" defer=""></script>
+    <script src="https://kit.fontawesome.com/17192b7610.js"></script>
+
+</head>
+
+<body id="page-top">
+
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="mid.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-piggy-bank"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">Midlands Corporation</div>
+    </a>
+
+    <hr class="sidebar-divider my-0">
+
+    <li class="nav-item active">
+        <a class="nav-link" href="mid.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Home</span></a>
+    </li>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers" aria-expanded="true" aria-controls="collapseUsers">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Beneficiaries</span>
+        </a>
+        <div id="collapseUsers" class="collapse" aria-labelledby="headingUsers" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Beneficiaries Management:</h6>
+                <a class="collapse-item" href="managebeneficiaries.html">Manage Beneficiaries</a>
+                <a class="collapse-item" href="addbeneficiary.html">Add Beneficiary</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTransfer" aria-expanded="true" aria-controls="collapseTransfer">
+            <i class="fas fa-fw fa-arrow-right"></i>
+            <span>Transfer Funds</span>
+        </a>
+        <div id="collapseTransfer" class="collapse" aria-labelledby="headingTransfer" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Transfer types:</h6>
+                <a class="collapse-item" href="tothisbank.html">To this bank</a>
+                <a class="collapse-item" href="tootherbanks.html">To other banks</a>
+                <a class="collapse-item" href="tobeneficiaries.html">To beneficiaries</a>
+                <a class="collapse-item" href="international.html">International</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTransactions" aria-expanded="true" aria-controls="collapseTransactions">
+            <i class="fas fa-fw fa-handshake"></i>
+            <span>Transactions</span>
+        </a>
+        <div id="collapseTransactions" class="collapse" aria-labelledby="headingTransactions" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Transaction types:</h6>
+                <a class="collapse-item" href="tr_tothisbank.html">To this bank</a>
+                <a class="collapse-item" href="tr_otherbanks.html">To other banks</a>
+                <a class="collapse-item" href="tr_tobeneficiary.html">To beneficiaries</a>
+                <a class="collapse-item" href="tr_international.html">International</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="support.html">
+            <i class="fas fa-fw fa-info-circle"></i>
+            <span>Support</span></a>
+    </li>
+
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!--<div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>-->
+
+</ul>
+
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+        <i class="fa fa-bars"></i>
+    </button>
+
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="https://ibank.midlandscorp.com/user/transfer/other-banks?account=5f81b059418d680288ace2cf#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="text-primary"><i class="fas fa-bars fa-sm"></i> Switch Account</span>
+            </a>
+            <!-- Dropdown - User Information -->
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                
+                    <a class="dropdown-item active" href="https://ibank.midlandscorp.com/user/transfer/other-banks?account=5f81b059418d680288ace2cf">
+                        <i class="fas fa-euro-sign fa-sm fa-fw mr-2 text-gray-400"></i>
+                        0706140201 FIXED DEPOSIT (EUR)<br>
+                        Balance: <b>€ 2,500,000.00</b>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                
+            </div>
+        </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="https://ibank.midlandscorp.com/user/transfer/other-banks?account=5f81b059418d680288ace2cf#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Dean Peterson</span>
+                <img class="img-profile rounded-circle" src="assets/default-image.png">
+            </a>
+            <!-- Dropdown - User Information -->
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="https://ibank.midlandscorp.com/user/profile?account=5f81b059418d680288ace2cf">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Profile
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="https://ibank.midlandscorp.com/user/transfer/other-banks?account=5f81b059418d680288ace2cf#" data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Logout
+                </a>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-xl-10 col-lg-12 col-md-9">
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">Transfer to OTHER BANKS</h1>
+                                </div>
+                                
+
+
+
+                                <form class="user" action="https://ibank.midlandscorp.com/user/transfer/other-banks?account=5f81b059418d680288ace2cf" method="post">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="">From Account Number</label>
+                                                <input name="sourceAccount" type="hidden" value="0706140201">
+                                                <input class="form-control" type="text" value="Dean Peterson - 0706140201 - FIXED DEPOSIT (EUR)" readonly="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="">Amount <span class="text-danger">*</span></label>
+                                                <input class="form-control" type="text" name="amount" required="">
+                                            </div>
+                                        </div>
+                                        
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <div class="form-group">
+                                                        <label for="">Recipient Account <span class="text-danger">*</span></label>
+                                                        <input class="form-control" type="text" name="recipientAccount" minlength="10" required="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label for="">Recipient Name <span class="text-danger">*</span></label>
+                                                        <input class="form-control" type="text" name="recipientName" required="">
+                                                    </div>
+                                                </div>
+                                            
+                                        
+                                        
+                                            
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label for="">Recipient Bank <span class="text-danger">*</span></label>
+                                                        <input class="form-control" type="text" name="recipientBankName" required="">
+                                                    </div>
+                                                </div>
+                                            
+                                            
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label for="">Bank <span class="text-danger">*</span></label>
+                                                        <select class="form-control" required="">
+                                                            <option value="">Select Bank</option>
+                                                            
+                                                                <option>Midlands</option>
+                                                            
+                                                                <option>MIDLANDS</option>
+                                                            
+                                                                <option>MIDLANDS UK</option>
+                                                            
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            
+                                            
+                                        
+                                        
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label>Description <span class="text-danger">*</span></label>
+                                                <textarea class="form-control" name="description" rows="3" required=""></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-user btn-block">
+                                        TRANSFER
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+<!-- End of Main Content -->
+
+<!-- Footer -->
+<footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright © Midlands Corporation 2019</span>
+        </div>
+    </div>
+</footer>
+<!-- End of Footer -->
+
+</div>
+<!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="https://ibank.midlandscorp.com/user/transfer/other-banks?account=5f81b059418d680288ace2cf#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="https://ibank.midlandscorp.com/logout">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="accountStatementModal" tabindex="-2" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Request Account Statement</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="user" action="https://ibank.midlandscorp.com/user/transactions/account/statement" id="accountStatementForm">
+                    <div class="row">
+                        <div class="form-group col-lg-12">
+                            <div class="form-group">
+                                <label for="">Account</label>
+                                <input type="hidden" name="account" value="5f81b059418d680288ace2cf" required="">
+                                <input class="form-control" type="text" value="Dean Peterson - 0706140201 - FIXED DEPOSIT (EUR)" readonly="">
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <input type="date" class="form-control" placeholder="Start Date" name="start" required="">
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <input type="date" class="form-control" placeholder="End Date" name="end" required="">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <button class="col-5 btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="offset-2 col-5 btn btn-primary btn-user btn-block" form="accountStatementForm">
+                            REQUEST
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+</body></html>
