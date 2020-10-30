@@ -13,23 +13,24 @@
 
     
     <!-- Custom fonts for this template-->
-    <link href="static/all.min.css" rel="stylesheet" type="text/css">
-    <link href="static/google-fonts.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='all.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='google-fonts.css') }}" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="static/sb-admin-2.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='sb-admin-2.min.css') }}" rel="stylesheet">
 
     <!-- Bootstrap core JavaScript-->
-    <script src="static/jquery.min.js"></script>
-    <script src="static/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="static/jquery.easing.min.js"></script>
+    <script src="{{ url_for('static', filename='jquery.easing.min.js') }}"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="static/sb-admin-2.min.js"></script>
-    <script src="static/script.js" defer=""></script>
+    <script src="{{ url_for('static', filename='sb-admin-2.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}" defer=""></script>
     <script src="https://kit.fontawesome.com/17192b7610.js"></script>
+
 
 </head>
 
@@ -41,7 +42,7 @@
 
     <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
 
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url_for('home')}}">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-piggy-bank"></i>
         </div>
@@ -51,7 +52,7 @@
     <hr class="sidebar-divider my-0">
 
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{ url_for('home')}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Home</span></a>
     </li>
@@ -65,8 +66,8 @@
         <div id="collapseUsers" class="collapse" aria-labelledby="headingUsers" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Beneficiaries Management:</h6>
-                <a class="collapse-item" href="managebeneficiaries.html">Manage Beneficiaries</a>
-                <a class="collapse-item" href="addbeneficiary.html">Add Beneficiary</a>
+                <a class="collapse-item" href="{{ url_for('mb')}}">Manage Beneficiaries</a>
+                <a class="collapse-item" href="{{ url_for('ab')}}">Add Beneficiary</a>
             </div>
         </div>
     </li>
@@ -79,10 +80,10 @@
         <div id="collapseTransfer" class="collapse" aria-labelledby="headingTransfer" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Transfer types:</h6>
-                <a class="collapse-item" href="tothisbank.html">To this bank</a>
-                <a class="collapse-item" href="tootherbanks.html">To other banks</a>
-                <a class="collapse-item" href="tobeneficiaries.html">To beneficiaries</a>
-                <a class="collapse-item" href="international.html">International</a>
+                <a class="collapse-item" href="{{ url_for('ttb')}}">To this bank</a>
+                <a class="collapse-item" href="{{ url_for('tob')}}">To other banks</a>
+                <a class="collapse-item" href="{{ url_for('tb')}}">To beneficiaries</a>
+                <a class="collapse-item" href="{{ url_for('international')}}">International</a>
             </div>
         </div>
     </li>
@@ -95,16 +96,16 @@
         <div id="collapseTransactions" class="collapse" aria-labelledby="headingTransactions" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Transaction types:</h6>
-                <a class="collapse-item" href="tr_tothisbank.html">To this bank</a>
-                <a class="collapse-item" href="tr_otherbanks.html">To other banks</a>
-                <a class="collapse-item" href="tr_tobeneficiary.html">To beneficiaries</a>
-                <a class="collapse-item" href="tr_international.html">International</a>
+                <a class="collapse-item" href="{{ url_for('tr_ttb')}}">To this bank</a>
+                <a class="collapse-item" href="{{ url_for('tr_tob')}}">To other banks</a>
+                <a class="collapse-item" href="{{ url_for('tr_tb')}}">To beneficiaries</a>
+                <a class="collapse-item" href="{{ url_for('tr_international')}}">International</a>
             </div>
         </div>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="support.html">
+        <a class="nav-link" href="{{ url_for('support')}}">
             <i class="fas fa-fw fa-info-circle"></i>
             <span>Support</span></a>
     </li>
@@ -116,6 +117,7 @@
     </div>-->
 
 </ul>
+
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -152,16 +154,16 @@
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Dean Peterson</span>
-                <img class="img-profile rounded-circle" src="static/default-image.png">
+                <img class="img-profile rounded-circle" src="{{ url_for('static', filename='default-image.png') }}">
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="profile.html">
+                <a class="dropdown-item" href="{{url_for('profile')}}">
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profile
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="login.html" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                     Logout
                 </a>
@@ -180,7 +182,7 @@
                         <div class="col-lg-12">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Transfer to INTERNATIONAL</h1>
+                                    <h1 class="h4 text-gray-900 mb-4">Add Beneficiary</h1>
                                 </div>
                                 
 
@@ -188,108 +190,27 @@
 
                                 <form class="user" action="#" method="post">
                                     <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="">From Account Number</label>
-                                                <input name="sourceAccount" type="hidden" value="0706140201">
-                                                <input class="form-control" type="text" value="Dean Peterson - 0706140201 - FIXED DEPOSIT (EUR)" readonly="">
-                                            </div>
+                                        <div class="form-group col-lg-4">
+                                            <input type="text" class="form-control" placeholder="Full Name" name="name" required="">
                                         </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="">Amount <span class="text-danger">*</span></label>
-                                                <input class="form-control" type="text" name="amount" required="">
-                                            </div>
+                                        <div class="form-group col-lg-4">
+                                            <input type="text" class="form-control" placeholder="Email Address" name="email" required="">
                                         </div>
-                                        
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <div class="form-group">
-                                                        <label for="">Recipient Account <span class="text-danger">*</span></label>
-                                                        <input class="form-control" type="text" name="recipientAccount" minlength="10" required="">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                                <div class="col-lg-6">
-                                                    <div class="form-group">
-                                                        <label for="">Recipient Name <span class="text-danger">*</span></label>
-                                                        <input class="form-control" type="text" name="recipientName" required="">
-                                                    </div>
-                                                </div>
-                                            
-                                        
-                                        
-                                            
-                                                <div class="col-lg-6">
-                                                    <div class="form-group">
-                                                        <label for="">Recipient Bank <span class="text-danger">*</span></label>
-                                                        <input class="form-control" type="text" name="recipientBankName" required="">
-                                                    </div>
-                                                </div>
-                                            
-                                            
-                                            
-                                        
-                                        
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="">Country <span class="text-danger">*</span></label>
-                                                    <input class="form-control" type="text" name="country" required="">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="">Swift Code <span class="text-danger">*</span></label>
-                                                    <input class="form-control" type="text" name="swiftCode" minlength="8" maxlength="11" required="">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="form-group">
-                                                    <label for="">IBAN</label>
-                                                    <input class="form-control" type="text" name="iban" minlength="34" maxlength="34">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="">Recipient Bank Address <span class="text-danger">*</span></label>
-                                                    <textarea class="form-control" name="recipientBankAddress" rows="3" required=""></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="">Recipient Address <span class="text-danger">*</span></label>
-                                                    <textarea class="form-control" name="recipientAddress" rows="3" required=""></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="">Sender Name <span class="text-danger">*</span></label>
-                                                    <input class="form-control" type="text" name="senderName" required="">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="">Reference Code</label>
-                                                    <input class="form-control" type="text" name="referenceCode">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="form-group">
-                                                    <label for="">Sender Address <span class="text-danger">*</span></label>
-                                                    <textarea class="form-control" name="senderAddress" rows="3" required=""></textarea>
-                                                </div>
-                                            </div>
-                                        
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <label>Description <span class="text-danger">*</span></label>
-                                                <textarea class="form-control" name="description" rows="3" required=""></textarea>
-                                            </div>
+                                        <div class="form-group col-lg-4">
+                                            <input type="text" class="form-control" placeholder="Phone Number" name="phoneNumber" required="">
+                                        </div>
+                                        <div class="form-group col-lg-4">
+                                            <input type="text" class="form-control" placeholder="Bank" name="bank" required="">
+                                        </div>
+                                        <div class="form-group col-lg-4">
+                                            <input type="text" class="form-control" placeholder="Account Number" name="account" minlength="10" required="">
+                                        </div>
+                                        <div class="form-group col-lg-4">
+                                            <input type="text" class="form-control" placeholder="Country" name="country" required="">
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-success btn-user btn-block">
-                                        TRANSFER
+                                        CREATE
                                     </button>
                                 </form>
                             </div>
@@ -339,7 +260,7 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-success" href="login.html">Logout</a>
+                <a class="btn btn-success" href="{{url_for('logout')}}">Logout</a>
             </div>
         </div>
     </div>
@@ -355,7 +276,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form class="user" action="#">
+                <form class="user" action="#" id="accountStatementForm">
                     <div class="row">
                         <div class="form-group col-lg-12">
                             <div class="form-group">

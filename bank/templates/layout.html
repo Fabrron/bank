@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Language" content="en-au">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Bambi is fun social network for students at Near East University to Match, Chat" />
+    <meta property="og:description" content="Bambi Dating is a fun social network for students at Near East University to Match, Chat and Date" />
+    <meta property="og:image" href="{{ url_for('static', filename='resources/' + 'logo.svg') }}" />
+    <link rel="canonical" href="http://bambi.app/dating">
+    <meta property="og:title" content="Bambi Dating by Harun Mohamed">
+    <meta property="og:description" content="Bambi Dating is a fun social network for students at Near East University to Match, Chat and Date">
+    <meta property="og:url" content="http://bambi.app/dating">
+    <meta property="og:site_name" content="Bambi">
+    <meta property="og:image" content="{{ url_for('static', filename='resources/' + 'logo.svg') }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="Bambi Dating is a fun social network for students at Near East University to Match, Chat and Date">
+    <meta name="twitter:title" content="Bambi Dating by Harun Mohamed">
+    <meta name="twitter:domain" content="Bambi">
+    <meta name="twitter:creator" content="@harunnmohamed">
+    <meta name="twitter:image:src" content="{{ url_for('static', filename='resources/' + 'logo.svg') }}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- CSS styles in static -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <!-- Font awesome kit -->
+    <!--<script src="https://kit.fontawesome.com/17192b7610.js"></script>-->
+
+
+
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='resources/' + 'logo.svg') }}">
+    {% if title %}
+      <title>Bambi - {{ title }}</title>
+    {% else %}
+      <title>Bambi</title>
+    {% endif %}
+    
+  </head>
+  <style>
+    ul.nav {
+    width:80%;
+    margin:0 auto;
+    padding:0;
+    list-style:none;
+    background-color:none;
+    text-align:center;
+    font-family: sans-serif; 
+}
+.nav li { 
+    display:inline-block;
+    width:25%;
+    margin:0;
+    padding:0;
+}
+.nav a {
+    text-align:center;
+    padding:8px 0 8px 0;
+    margin:0;
+    display:block;
+    text-decoration:none;
+    color: #fff;
+}
+.nav a:hover { 
+    background:#191917;
+    border:1px solid #070707;
+    border-radius:3px;
+}
+.active{
+  background: #F3EFA1;
+  border: 1px solid #070707;
+  border-radius: 3px;
+}
+
+ul.nav li:first-child a{
+    border:none;
+}
+ul.nav li:last-child a {
+    border:none;
+}
+  </style>
+  <body>
+
+
+<nav class="navbar navbar-expand-md navbar-dark sticky-top justify-content-center d-none d-lg-block">
+   <ul class="nav">
+    <li {% if '/home' == request.path %}  class="active" {% endif %}>
+      <a href="{{url_for('home')}}"><img src="{{ url_for('static', filename='resources/' + 'swipe.svg') }}" style="width:30px;height:30px;"></a>
+    </li>
+    <li {% if '/discover' == request.path %}  class="active" {% endif %}>
+      <a href="{{url_for('discover')}}"><img src="{{ url_for('static', filename='resources/' + 'like.svg') }}" style="width:30px;height:30px;"></a>
+    </li>
+    <li {% if '/messages' == request.path %}  class="active" {% endif %}>
+      <a href="{{url_for('messages')}}">
+        <img src="{{ url_for('static', filename='resources/' + 'message.svg') }}" style="width:30px;height:30px;">
+        {% if current_user.is_authenticated %}
+        {% set new_messages = current_user.new_messages() %}
+        <span id="message_count" class="badge badge-warning"style="visibility: 
+        {% if new_messages %}visible{% else %}hidden {% endif %};">{{ new_messages }}</span>
+      {% endif %}
+      </a>
+    </li>
+    <li>
+      <a href="{{url_for('user_posts', username=current_user.username)}}">
+        {% if current_user.is_authenticated %}
+          <img src="{{ url_for('static', filename='profile_pics/' + current_user.dp) }}" style="width:30px;height:30px;border-radius:50%">
+        {% else %}
+        <img src="https://www.flaticon.com/premium-icon/icons/svg/3133/3133799.svg" style="width:30px;height:30px;">
+        {% endif %}
+      </a>
+    </li>
+    <!--<li><a href="{{url_for('logout')}}"><img src="https://www.flaticon.com/premium-icon/icons/svg/3009/3009474.svg" style="width:30px;height:30px;"></a></li>-->
+</ul>
+</nav>
+
+
+<div class="d-block d-sm-none mt-2"></div>
+  
+
+  {% block content %} {% endblock %}
+
+
+  <div class="bottom d-block d-sm-none">
+
+      <a href="{{url_for('home')}}" {% if '/home' == request.path %}  class="active" {% endif %}>
+        <img src="{{ url_for('static', filename='resources/' + 'swipe.svg') }}" style="width:30px;height:30px;">
+      </a>
+
+      <a href="{{url_for('discover')}}" {% if '/discover' == request.path %}  class="active" {% endif %}>
+        <img src="{{ url_for('static', filename='resources/' + 'like.svg') }}" style="width:30px;height:30px;">
+      </a>
+      
+      <a href="{{url_for('messages')}}" {% if '/messages' == request.path %}  class="active" {% endif %}>
+        <img src="{{ url_for('static', filename='resources/' + 'message.svg') }}" style="width:30px;height:30px;">
+      </a>
+
+      <a href="{{url_for('user_posts', username=current_user.username)}}">
+        {% if current_user.is_authenticated %}
+          <img src="{{ url_for('static', filename='profile_pics/' + current_user.dp) }}" style="width:30px;height:30px;border-radius:50%">
+        {% else %}
+        <img src="https://www.flaticon.com/premium-icon/icons/svg/3133/3133799.svg" style="width:30px;height:30px;">
+        {% endif %}
+      </a>
+
+
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script>
+  $(document).ready(function(){
+    $('[data-toggle="popover"]').popover({
+      trigger: 'hover'
+    }); 
+  });
+</script>
+
+<script>
+  //get id Year and add current year using JS
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>
+
+{% block scripts %}
+    {{ moment.include_moment() }}
+
+    <script>
+        // ...
+        function set_message_count(n) {
+            $('#message_count').text(n);
+            $('#message_count').css('visibility', n ? 'visible' : 'hidden');
+        }
+    </script>
+
+    <script>
+     $('.love').click(function(){
+      $(this).toggleClass('liked');
+    });
+  </script>
+
+{% endblock %}
+
+  </body>
+</html>

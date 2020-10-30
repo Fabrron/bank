@@ -11,24 +11,23 @@
 
     <title>Midlands Corporation</title>
 
-    
-    <!-- Custom fonts for this template-->
-    <link href="static/all.min.css" rel="stylesheet" type="text/css">
-    <link href="static/google-fonts.css" rel="stylesheet">
+   <!-- Custom fonts for this template-->
+    <link href="{{ url_for('static', filename='all.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='google-fonts.css') }}" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="static/sb-admin-2.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='sb-admin-2.min.css') }}" rel="stylesheet">
 
     <!-- Bootstrap core JavaScript-->
-    <script src="static/jquery.min.js"></script>
-    <script src="static/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="static/jquery.easing.min.js"></script>
+    <script src="{{ url_for('static', filename='jquery.easing.min.js') }}"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="static/sb-admin-2.min.js"></script>
-    <script src="static/script.js" defer=""></script>
+    <script src="{{ url_for('static', filename='sb-admin-2.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}" defer=""></script>
     <script src="https://kit.fontawesome.com/17192b7610.js"></script>
 
 </head>
@@ -36,12 +35,13 @@
 <body id="page-top">
 
 
+
 <!-- Page Wrapper -->
 <div id="wrapper">
 
     <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
 
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url_for('home')}}">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-piggy-bank"></i>
         </div>
@@ -51,7 +51,7 @@
     <hr class="sidebar-divider my-0">
 
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{ url_for('home')}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Home</span></a>
     </li>
@@ -65,8 +65,8 @@
         <div id="collapseUsers" class="collapse" aria-labelledby="headingUsers" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Beneficiaries Management:</h6>
-                <a class="collapse-item" href="managebeneficiaries.html">Manage Beneficiaries</a>
-                <a class="collapse-item" href="addbeneficiary.html">Add Beneficiary</a>
+                <a class="collapse-item" href="{{ url_for('mb')}}">Manage Beneficiaries</a>
+                <a class="collapse-item" href="{{ url_for('ab')}}">Add Beneficiary</a>
             </div>
         </div>
     </li>
@@ -79,10 +79,10 @@
         <div id="collapseTransfer" class="collapse" aria-labelledby="headingTransfer" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Transfer types:</h6>
-                <a class="collapse-item" href="tothisbank.html">To this bank</a>
-                <a class="collapse-item" href="tootherbanks.html">To other banks</a>
-                <a class="collapse-item" href="tobeneficiaries.html">To beneficiaries</a>
-                <a class="collapse-item" href="international.html">International</a>
+                <a class="collapse-item" href="{{ url_for('ttb')}}">To this bank</a>
+                <a class="collapse-item" href="{{ url_for('tob')}}">To other banks</a>
+                <a class="collapse-item" href="{{ url_for('tb')}}">To beneficiaries</a>
+                <a class="collapse-item" href="{{ url_for('international')}}">International</a>
             </div>
         </div>
     </li>
@@ -95,16 +95,16 @@
         <div id="collapseTransactions" class="collapse" aria-labelledby="headingTransactions" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Transaction types:</h6>
-                <a class="collapse-item" href="tr_tothisbank.html">To this bank</a>
-                <a class="collapse-item" href="tr_otherbanks.html">To other banks</a>
-                <a class="collapse-item" href="tr_tobeneficiary.html">To beneficiaries</a>
-                <a class="collapse-item" href="tr_international.html">International</a>
+                <a class="collapse-item" href="{{ url_for('tr_ttb')}}">To this bank</a>
+                <a class="collapse-item" href="{{ url_for('tr_tob')}}">To other banks</a>
+                <a class="collapse-item" href="{{ url_for('tr_tb')}}">To beneficiaries</a>
+                <a class="collapse-item" href="{{ url_for('tr_international')}}">International</a>
             </div>
         </div>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="support.html">
+        <a class="nav-link" href="{{ url_for('support')}}">
             <i class="fas fa-fw fa-info-circle"></i>
             <span>Support</span></a>
     </li>
@@ -116,6 +116,7 @@
     </div>-->
 
 </ul>
+
 
 
     <!-- Content Wrapper -->
@@ -153,11 +154,11 @@
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Dean Peterson</span>
-                <img class="img-profile rounded-circle" src="static/default-image.png">
+                <img class="img-profile rounded-circle" src="{{ url_for('static', filename='default-image.png') }}">
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="profile.html">
+                <a class="dropdown-item" href="{{url_for('profile')}}">
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profile
                 </a>
@@ -172,68 +173,36 @@
 </nav>
 
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-xl-10 col-lg-12 col-md-9">
-            <div class="card o-hidden border-0 shadow-lg my-5">
-                <div class="card-body p-0">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="p-5">
-                                <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Transfer to BENEFICIARIES</h1>
-                                </div>
-                                
+<div class="container-fluid">
+    
 
 
 
-                                <form class="user" action="#" method="post">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="">From Account Number</label>
-                                                <input name="sourceAccount" type="hidden" value="0706140201">
-                                                <input class="form-control" type="text" value="Dean Peterson - 0706140201 - FIXED DEPOSIT (EUR)" readonly="">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="">Amount <span class="text-danger">*</span></label>
-                                                <input class="form-control" type="text" name="amount" required="">
-                                            </div>
-                                        </div>
-                                        
-                                        
-                                            
-                                            
-                                            
-                                                <div class="col-lg-6">
-                                                    <div class="form-group">
-                                                        <label for="">Beneficiary <span class="text-danger">*</span></label>
-                                                        <select name="beneficiary" class="form-control" required="">
-                                                            <option value="">Select Beneficiary</option>
-                                                            
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            
-                                        
-                                        
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <label>Description <span class="text-danger">*</span></label>
-                                                <textarea class="form-control" name="description" rows="3" required=""></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="submit" class="btn btn-success btn-user btn-block">
-                                        TRANSFER
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+    <h1 class="h3 mb-2 text-gray-800">Transactions</h1>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-success">INTERNATIONAL Transactions</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>TYPE</th>
+                            <th>DESCRIPTION</th>
+                            <th>DATE</th>
+                            <th>AMOUNT</th>
+                            <th>STATUS</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -277,7 +246,7 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-success" href="login.html">Logout</a>
+                <a class="btn btn-success" href="{{url_for('logout')}}">Logout</a>
             </div>
         </div>
     </div>
@@ -293,7 +262,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form class="user" action="#" id="accountStatementForm">
+                <form class="user" action="" id="accountStatementForm">
                     <div class="row">
                         <div class="form-group col-lg-12">
                             <div class="form-group">
