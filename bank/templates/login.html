@@ -18,6 +18,9 @@
     <!-- Custom styles for this template-->
     <link href="{{ url_for('static', filename='sb-admin-2.min.css') }}" rel="stylesheet">
 
+    <!-- CSS styles in static -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
     <!-- Bootstrap core JavaScript-->
     <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
     <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
@@ -31,8 +34,7 @@
     <script src="https://kit.fontawesome.com/17192b7610.js"></script>
 
 </head>
-<body style="background-color: #7cffcb;background-image:linear-gradient(315deg, #7cffcb 0%, #74f2ce 74%);
-">
+<body>
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-3 d-none d-lg-block">
@@ -40,7 +42,7 @@
     </div>
 
     <div class="col-lg-6 mt-5" style="text-align: center">
-      <div class="post">
+      <div class="post mt-5">
         {% with messages = get_flashed_messages(with_categories=true) %}
           {% if messages %}
               {% for category , message in messages %}
@@ -95,17 +97,24 @@
             </fieldset>
             <div class="form-group">
 
-        {{ form.submit(class="btn btn-success", placeholder="Login") }}
+        {{ form.submit(class="btn btn-outline-primary btn-lg", placeholder="Login") }}
 
       </div>
 
   </form>
 
-      
+   <small class="text-muted">Don't have an account? <a href="#">Register</a></small>
 
         </div>
     </div>
-
+    <br>
+     <header style="color:#F9E9C8;border:1px solid #191917;padding:8px;">
+        <img src="https://ibank.midlandscorp.com/images/logo.png" alt="logo" class="profile-thumbnail">
+        <div class="profile-name">
+          <h3 class="logo mt-2">Midlands Corporation</h3>
+          <small id="year" style="margin-left:-60px"></small>
+        </div>
+      </header>
     </div>
 
 </body></html>
