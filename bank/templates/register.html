@@ -70,19 +70,145 @@
         <h1 class="display-4" style="text-align:left;padding-bottom:5px;">Sign Up.</h1>
       <!--<img src="https://image.flaticon.com/icons/svg/408/408710.svg" class="mb-3" style="width:120px;height:120px;border-radius: 5px;">-->
 
+
+
+        <!-- Firstname and Last Name-->
+        <div class="row">
+          <!--First Name-->
+          <div class="col-6">
+            <div class="form-group">
+            {% if form.firstname.errors %}
+            {{ form.firstname(placeholder="First Name", class="form-control form-control is-invalid") }}
+            <div class="invalid-feedback">
+              {% for error in form.firstname.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %}
+            {{ form.firstname(placeholder="First Name", class="form-control form-control") }}
+            {% endif %}
+          </div>
+          </div>
+
+          <!-- Last Name -->
+          <div class="col-6">
+            <div class="form-group">
+              {% if form.lastname.errors %}
+              {{ form.lastname(placeholder="Last Name", class="form-control form-control is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.lastname.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+              {% else %}
+              {{ form.lastname(placeholder="Last Name", class="form-control form-control") }}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <!-- Email -->
         <div class="form-group">
         {% if form.email.errors %}
-        {{ form.email(placeholder="email", class="form-control form-control is-invalid") }}
+        {{ form.email(placeholder="Email", class="form-control form-control is-invalid") }}
         <div class="invalid-feedback">
           {% for error in form.email.errors %}
           <span>{{ error }}</span>
           {% endfor %}
         </div>
         {% else %}
-        {{ form.email(placeholder="email", class="form-control form-control") }}
+        {{ form.email(placeholder="Email", class="form-control form-control") }}
         {% endif %}
       </div>
+
+      <!-- Phone -->
+      <div class="form-group">
+        {% if form.phone.errors %}
+        {{ form.phone(placeholder="Phone", class="form-control form-control is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.phone.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+        {{ form.phone(placeholder="Phone", class="form-control form-control") }}
+        {% endif %}
+      </div>
+
+
+      <!-- Street and City -->
+        <div class="row">
+          <!--Street-->
+          <div class="col-6">
+            <div class="form-group">
+            {% if form.street.errors %}
+            {{ form.street(placeholder="Street", class="form-control form-control is-invalid") }}
+            <div class="invalid-feedback">
+              {% for error in form.street.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %}
+            {{ form.street(placeholder="Street", class="form-control form-control") }}
+            {% endif %}
+          </div>
+          </div>
+
+          <!-- City-->
+          <div class="col-6">
+            <div class="form-group">
+              {% if form.city.errors %}
+              {{ form.city(placeholder="City", class="form-control form-control is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.city.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+              {% else %}
+              {{ form.city(placeholder="City", class="form-control form-control") }}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <!-- State and Country -->
+        <div class="row">
+          <!--State-->
+          <div class="col-6">
+            <div class="form-group">
+            {% if form.state.errors %}
+            {{ form.state(placeholder="State", class="form-control form-control is-invalid") }}
+            <div class="invalid-feedback">
+              {% for error in form.state.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %}
+            {{ form.state(placeholder="State", class="form-control form-control") }}
+            {% endif %}
+          </div>
+          </div>
+
+          <!-- Country -->
+          <div class="col-6">
+            <div class="form-group">
+              {% if form.country.errors %}
+              {{ form.country(placeholder="Country", class="form-control form-control is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.country.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+              {% else %}
+              {{ form.country(placeholder="Country", class="form-control form-control") }}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+
    
+      <!-- Password -->
       <div class="form-group">
         {% if form.password.errors %}
         {{ form.password(placeholder="password", class="form-control form-control is-invalid") }}
@@ -96,6 +222,7 @@
         {% endif %}
       </div>
 
+      <!-- Confirm Password -->
       <div class="form-group">
         {% if form.confirm_password.errors %}
         {{ form.confirm_password(placeholder="confirm password", class="form-control form-control is-invalid") }}

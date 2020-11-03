@@ -14,7 +14,14 @@ def load_user(user_id):
 
 class User(db.Model, UserMixin):
 	id = db.Column(db.Integer, primary_key=True)
+	firstname = db.Column(db.String(120), nullable=True)
+	lastname = db.Column(db.String(120), nullable=True)
 	email = db.Column(db.String(120), unique=True, nullable=True)
+	phone = db.Column(db.String(120), unique=True, nullable=True)
+	street = db.Column(db.String(120), nullable=True)
+	city = db.Column(db.String(120), nullable=True)
+	state = db.Column(db.String(120), nullable=True)
+	country = db.Column(db.String(120), nullable=True)
 	password = db.Column(db.String(60), nullable=False)
 
 	def get_reset_token(self, expires_sec=1800):
