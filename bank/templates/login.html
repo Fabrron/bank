@@ -34,6 +34,31 @@
     <script src="https://kit.fontawesome.com/17192b7610.js"></script>
 
 </head>
+<style>
+  body{
+    background: #f8f9fc;
+  }
+  .post{
+    background: #fff;
+    color:#1cc88a;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+    border-left:5px solid #1cc88a;
+  }
+  .form-control{
+    background: rgba(255,255,255,0.1);
+    border: none;
+    font-size: 16px;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 15px;
+    width: 100%;
+    background-color: #e8eeef;
+    color: #8a97a0;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
+  }
+</style>
 <body>
 <div class="container-fluid">
   <div class="row">
@@ -41,7 +66,7 @@
 
     </div>
 
-    <div class="col-lg-6 mt-5" style="text-align: center">
+    <div class="col-lg-6 mt-5" style="text-align:center;">
       <div class="post mt-5">
         {% with messages = get_flashed_messages(with_categories=true) %}
           {% if messages %}
@@ -97,24 +122,16 @@
             </fieldset>
             <div class="form-group">
 
-        {{ form.submit(class="btn btn-outline-primary btn-lg", placeholder="Login") }}
+        {{ form.submit(class="btn btn-success btn-lg", placeholder="Login") }}
 
       </div>
 
   </form>
 
-   <small class="text-muted">Don't have an account? <a href="{{url_for('register')}}">Register</a></small>
+   <small class="text-muted">Don't have an account? <a href="{{url_for('register')}}" style="color:#1cc88a;">Register</a></small>
 
         </div>
     </div>
-    <br>
-     <header style="color:#F9E9C8;border:1px solid #191917;padding:8px;">
-        <img src="https://ibank.midlandscorp.com/images/logo.png" alt="logo" class="profile-thumbnail">
-        <div class="profile-name">
-          <h3 class="logo mt-2">Hallmark Financing</h3>
-          <small id="year" style="margin-left:-60px"></small>
-        </div>
-      </header>
     </div>
 
 </body></html>
