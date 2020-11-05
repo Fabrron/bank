@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="icon" href="https://ibank.midlandscorp.com/images/logo.png" type="image/png">
+
+    <title>Update Account Info - Hallmark Financing</title>
+    
+    <!-- Custom fonts for this template-->
+    <link href="{{ url_for('static', filename='all.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='google-fonts.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{{ url_for('static', filename='sb-admin-2.min.css') }}" rel="stylesheet">
+
+    <!-- CSS styles in static -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{{ url_for('static', filename='jquery.easing.min.js') }}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{{ url_for('static', filename='sb-admin-2.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}" defer=""></script>
+    <script src="https://kit.fontawesome.com/17192b7610.js"></script>
+
+</head>
+<style>
+  body{
+    background: #f4f7f8;
+  }
+  .post{
+    background: #f8f9fc;
+    color:#1cc88a;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+    border-left:5px solid #1cc88a;
+  }
+  .form-control{
+    background: rgba(255,255,255,0.1);
+    border: none;
+    font-size: 16px;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 15px;
+    width: 100%;
+    background-color: #e8eeef;
+    color: #8a97a0;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
+  }
+</style>
+
+<body>
+<div class="container-fluid">
+	<div class="row">
+
+
+		<div class="col-lg-3 d-none d-lg-block position-fixed">
+		  
+		</div>
+
+
+		<div class="col-lg-6 offset-lg-3 mt-5 mb-5" style="text-align: center">
+			
+			<div class="post">
+				 {% with messages = get_flashed_messages(with_categories=true) %}
+		    	{% if messages %}
+		      		{% for category , message in messages %}
+		        		<div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+	      					{{message}}
+	        			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	          				<span aria-hidden="true">&times;</span>
+	        			</button>
+	      				</div>
+		      		{% endfor %}
+		    	{% endif %}
+	  		  {% endwith %}
+			  <div id="inner">
+			   <div class="content-section">
+				  <form method="POST" action="" enctype="multipart/form-data">
+				    {{ form.hidden_tag() }}
+				    <fieldset class="form-group">
+				      <legend class="border-bottom mb-2 pb-2">Account Info</legend>
+				      <div class="form-group">
+				        {{ form.firstname.label(class="form-control-label") }}
+
+				        {% if form.firstname.errors %}
+				        {{ form.firstname(class="form-control form-control-lg is-invalid") }}
+				        <div class="invalid-feedback">
+				          {% for error in form.firstname.errors %}
+				          <span>{{ error }}</span>
+				          {% endfor %}
+				        </div>
+				        {% else %}
+				        {{ form.firstname(class="form-control form-control-lg") }}
+				        {% endif %}
+				      </div>
+				      <div class="form-group">
+				        {{ form.lastname.label(class="form-control-label") }}
+				        {% if form.lastname.errors %}
+				        {{ form.lastname(class="form-control form-control-lg is-invalid") }}
+				        <div class="invalid-feedback">
+				          {% for error in form.lastname.errors %}
+				          <span>{{ error }}</span>
+				          {% endfor %}
+				        </div>
+				        {% else %}
+				        {{ form.lastname(class="form-control form-control-lg") }}
+				        {% endif %}
+				      </div>
+				      <div class="form-group">
+				        {{ form.email.label(class="form-control-label") }}
+				        {% if form.email.errors %}
+				        {{ form.email(class="form-control form-control-lg is-invalid") }}
+				        <div class="invalid-feedback">
+				          {% for error in form.email.errors %}
+				          <span>{{ error }}</span>
+				          {% endfor %}
+				        </div>
+				        {% else %}
+				        {{ form.email(class="form-control form-control-lg") }}
+				        {% endif %}
+				      </div>
+				      <div class="form-group">
+				        {{ form.phone.label(class="form-control-label") }}
+				        {% if form.phone.errors %}
+				        {{ form.phone(class="form-control form-control-lg is-invalid") }}
+				        <div class="invalid-feedback">
+				          {% for error in form.phone.errors %}
+				          <span>{{ error }}</span>
+				          {% endfor %}
+				        </div>
+				        {% else %}
+				        {{ form.phone(class="form-control form-control-lg") }}
+				        {% endif %}
+				      </div>
+				      <div class="form-group">
+				        {{ form.street.label(class="form-control-label") }}
+				        {% if form.street.errors %}
+				        {{ form.street(class="form-control form-control-lg is-invalid") }}
+				        <div class="invalid-feedback">
+				          {% for error in form.street.errors %}
+				          <span>{{ error }}</span>
+				          {% endfor %}
+				        </div>
+				        {% else %}
+				        {{ form.street(class="form-control form-control-lg") }}
+				        {% endif %}
+				      </div>
+				      <div class="form-group">
+				        {{ form.city.label(class="form-control-label") }}
+				        {% if form.city.errors %}
+				        {{ form.city(class="form-control form-control-lg is-invalid") }}
+				        <div class="invalid-feedback">
+				          {% for error in form.city.errors %}
+				          <span>{{ error }}</span>
+				          {% endfor %}
+				        </div>
+				        {% else %}
+				        {{ form.city(class="form-control form-control-lg") }}
+				        {% endif %}
+				      </div>
+				      <div class="form-group">
+				        {{ form.state.label(class="form-control-label") }}
+				        {% if form.state.errors %}
+				        {{ form.state(class="form-control form-control-lg is-invalid") }}
+				        <div class="invalid-feedback">
+				          {% for error in form.state.errors %}
+				          <span>{{ error }}</span>
+				          {% endfor %}
+				        </div>
+				        {% else %}
+				        {{ form.state(class="form-control form-control-lg") }}
+				        {% endif %}
+				      </div>
+				      <div class="form-group">
+				        {{ form.country.label(class="form-control-label") }}
+				        {% if form.country.errors %}
+				        {{ form.country(class="form-control form-control-lg is-invalid") }}
+				        <div class="invalid-feedback">
+				          {% for error in form.country.errors %}
+				          <span>{{ error }}</span>
+				          {% endfor %}
+				        </div>
+				        {% else %}
+				        {{ form.country(class="form-control form-control-lg") }}
+				        {% endif %}
+				      </div>
+				       <div class="form-group">
+				        {{ form.debit.label(class="form-control-label") }}
+				        {% if form.debit.errors %}
+				        {{ form.debit(class="form-control form-control-lg is-invalid") }}
+				        <div class="invalid-feedback">
+				          {% for error in form.debit.errors %}
+				          <span>{{ error }}</span>
+				          {% endfor %}
+				        </div>
+				        {% else %}
+				        {{ form.debit(class="form-control form-control-lg") }}
+				        {% endif %}
+				      </div>
+				      <div class="form-group">
+				        {{ form.credit.label(class="form-control-label") }}
+				        {% if form.credit.errors %}
+				        {{ form.credit(class="form-control form-control-lg is-invalid") }}
+				        <div class="invalid-feedback">
+				          {% for error in form.credit.errors %}
+				          <span>{{ error }}</span>
+				          {% endfor %}
+				        </div>
+				        {% else %}
+				        {{ form.credit(class="form-control form-control-lg") }}
+				        {% endif %}
+				      </div>
+				      <div class="form-group">
+				      {{ form.submit(class="btn btn-success btn-lg") }}
+				    </div>
+				    </fieldset>
+				  </form>
+
+			  </div>
+		</div>
+			</div>
+
+		</div>
+
+
+
+		<div class="col-lg-3 d-none d-lg-block position-fixed offset-lg-9">
+
+	</div>
+</div>
+
+
+</body></html>

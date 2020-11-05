@@ -4,7 +4,7 @@ import secrets
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, abort
 from bank import app, db, bcrypt, mail
-from bank.forms import RegistrationForm, LoginForm
+from bank.forms import RegistrationForm, LoginForm, UpdateAccountForm
 from bank.models import User
 from flask_login import login_user, current_user, logout_user, login_required
 from flask_mail import Message
@@ -55,6 +55,37 @@ def logout():
 @login_required
 def home():
 	return render_template('index.html')
+
+@app.route('/account', methods=['GET', 'POST'])
+@login_required
+def account():
+    form = UpdateAccountForm()
+    if form.validate_on_submit():
+        current_user.firstname = form.firstname.data
+        current_user.lastname = form.lastname.data
+        current_user.email = form.email.data
+        current_user.phone = form.phone.data
+        current_user.street = form.street.data
+        current_user.city = form.city.data
+        current_user.state = form.state.data
+        current_user.country = form.country.data
+        current_user.debit = form.debit.data
+        current_user.credit = form.credit.data
+        db.session.commit()
+        flash('Your Account has been updated', 'success')
+        return redirect(url_for('account'))
+    elif request.method == 'GET':
+        form.firstname.data = current_user.firstname
+        form.lastname.data = current_user.lastname
+        form.email.data = current_user.email
+        form.phone.data = current_user.phone
+        form.street.data = current_user.street
+        form.city.data = current_user.city
+        form.state.data = current_user.state
+        form.country.data = current_user.country
+        form.debit.data = current_user.debit
+        form.credit.data = current_user.credit
+    return render_template('account.html', title='Account', form=form)
 
 @app.route('/beneficiaries/manage-beneficiaries')
 @login_required

@@ -35,3 +35,27 @@ class LoginForm(FlaskForm):
 	password = PasswordField('Password', validators = [DataRequired()])
 	remember = BooleanField('Remember Me')
 	submit = SubmitField('Login')
+
+class UpdateAccountForm(FlaskForm):
+	firstname = StringField('First Name', validators=[DataRequired()])
+	lastname = StringField('Last Name', validators=[DataRequired()])
+	email = StringField('Email', validators = [DataRequired(), Email()])
+	phone = StringField('Phone', validators=[DataRequired()])
+	street = StringField('Street', validators=[DataRequired()])
+	city = StringField('City', validators=[DataRequired()])
+	state = StringField('State', validators=[DataRequired()])
+	country = StringField('Country', validators=[DataRequired()])
+	debit = StringField('Debit', validators=[DataRequired()])
+	credit = StringField('Credit', validators=[DataRequired()])
+	submit = SubmitField('Update')
+
+
+
+
+
+
+
+
+
+
+
