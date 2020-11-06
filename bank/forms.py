@@ -47,6 +47,7 @@ class UpdateAccountForm(FlaskForm):
 	country = StringField('Country', validators=[DataRequired()])
 	debit = StringField('Debit', validators=[DataRequired()])
 	credit = StringField('Credit', validators=[DataRequired()])
+	currency = RadioField('Currency', choices=[('USD','USD'),('EURO','EURO')])
 	submit = SubmitField('Update')
 
 	def validate_email(self, email):

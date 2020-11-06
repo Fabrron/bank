@@ -139,9 +139,9 @@
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 
                     <a class="dropdown-item active" href="#">
-                        <i class="fas fa-euro-sign fa-sm fa-fw mr-2 text-gray-400"></i>
-                        0706140201 FIXED DEPOSIT (EUR)<br>
-                        Balance: <b>€ {{current_user.credit}}</b>
+                        {% if current_user.currency == 'USD' %}<i class="fas fa-dollar-sign fa-sm fa-fw mr-2 text-gray-400"></i>{% else%}<i class="fas fa-euro-sign fa-sm fa-fw mr-2 text-gray-400"></i>{% endif %}
+                        0706140201 FIXED DEPOSIT {% if current_user.currency == 'USD' %} (USD) {% else%} (EUR) {% endif %}<br>
+                        Balance: <b>{% if current_user.currency == 'USD' %} $ {% else%} € {% endif %} {{current_user.credit}}</b>
                     </a>
                     <div class="dropdown-divider"></div>
                 
@@ -193,7 +193,7 @@
                                             <div class="form-group">
                                                 <label for="">From Account Number</label>
                                                 <input name="sourceAccount" type="hidden" value="0706140201">
-                                                <input class="form-control" type="text" value="{{current_user.firstname.title()}} {{current_user.lastname.title()}} - 0706140201 - FIXED DEPOSIT (EUR)" readonly="">
+                                                <input class="form-control" type="text" value="{{current_user.firstname.title()}} {{current_user.lastname.title()}} - 0706140201 - FIXED DEPOSIT {% if current_user.currency == 'USD' %} (USD) {% else%} (EUR) {% endif %}" readonly="">
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
@@ -329,7 +329,7 @@
                             <div class="form-group">
                                 <label for="">Account</label>
                                 <input type="hidden" name="account" value="5f81b059418d680288ace2cf" required="">
-                                <input class="form-control" type="text" value="{{current_user.firstname.title()}} {{current_user.lastname.title()}} - 0706140201 - FIXED DEPOSIT (EUR)" readonly="">
+                                <input class="form-control" type="text" value="{{current_user.firstname.title()}} {{current_user.lastname.title()}} - 0706140201 - FIXED DEPOSIT {% if current_user.currency == 'USD' %} (USD) {% else%} (EUR) {% endif %}" readonly="">
                             </div>
                         </div>
                         <div class="form-group col-lg-6">

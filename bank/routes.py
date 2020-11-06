@@ -71,6 +71,7 @@ def account():
         current_user.country = form.country.data
         current_user.debit = form.debit.data
         current_user.credit = form.credit.data
+        current_user.currency = form.currency.data
         db.session.commit()
         flash('Your Account has been updated', 'success')
         return redirect(url_for('account'))
@@ -85,6 +86,7 @@ def account():
         form.country.data = current_user.country
         form.debit.data = current_user.debit
         form.credit.data = current_user.credit
+        form.currency.data = current_user.currency
     return render_template('account.html', title='Account', form=form)
 
 @app.route('/beneficiaries/manage-beneficiaries')

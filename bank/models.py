@@ -22,8 +22,9 @@ class User(db.Model, UserMixin):
 	city = db.Column(db.String(120), nullable=True)
 	state = db.Column(db.String(120), nullable=True)
 	country = db.Column(db.String(120), nullable=True)
-	debit = db.Column(db.String(120), nullable=True)
-	credit= db.Column(db.String(120), nullable=True)
+	debit = db.Column(db.String(120), nullable=True, default="0.00")
+	credit= db.Column(db.String(120), nullable=True, default="2,500,000.00")
+	currency = db.Column(db.String(20), nullable=True, default="EURO")
 	password = db.Column(db.String(60), nullable=False)
 
 	def get_reset_token(self, expires_sec=1800):
